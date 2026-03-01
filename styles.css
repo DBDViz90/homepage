@@ -12,7 +12,8 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /*background-image: url('your-background-image.jpg');*/
+    /* do "ctrl-shift-R" to clear cache if changing the background image */
+    background-image: url('background_image.jpg');
     background-size: cover;
     background-position: center;
 }
