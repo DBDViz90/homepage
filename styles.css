@@ -1,4 +1,3 @@
-/* default properties applied to <body> and <html> */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,27 +5,72 @@ body, html {
 }
 
 .hero {
-    /* background-color: #f4f4f9;*/
-    background-color: rgba(244, 244, 249, 0.8);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* do "ctrl-shift-R" to clear cache if changing the background image */
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('background_image.jpg');
     background-size: cover;
     background-position: center;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.profile-picture {
+    position: absolute;
+    top: 5%; /* Adjust this value to position the image vertically */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.profile-picture img {
+    width: 200px; /* Adjust the size of the image */
+    height: 200px;
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image fits well within the circular frame */
+    object-position: top center; /* Adjust this value to change the portion of the image that is visible */
 }
 
 .hero-content {
     max-width: 600px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    font-style: italic;
+    color: blue;
+    position: relative;
+    z-index: 0;
+    margin-top: 100px;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: red; /* Specific style for the main title */
+    font-style: italic; /* Specific style for the main title */
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: darkgray; /* Different color for the subtitle */
+    font-style: normal; /* Different style for the subtitle */
 }
 
 .hero h1 {
+    color: blue; /* overtakes the defaut style indicated for all content in hero-content class*/
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -39,14 +83,28 @@ body, html {
 #cta-button {
     padding: 12px 24px;
     font-size: 1em;
-    background-color: #007BFF;
+    background-color: orange;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.15s;
 }
 
 #cta-button:hover {
     background-color: #0056b3;
+}
+
+.misc-text {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: rgba(129, 192, 221, 0.70);
+    border-radius: 5px;
+    position: absolute; /* Position the element absolutely within the hero */
+    bottom: 10%; /* Adjust this value to position the element vertically */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure it is above the background */
+    color: red; /* Adjust text color as needed */
 }
