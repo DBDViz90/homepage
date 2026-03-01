@@ -6,7 +6,8 @@ body, html {
 }
 
 .hero {
-    background-color: #f4f4f9;
+    /* background-color: #f4f4f9;*/
+    background-color: rgba(244, 244, 249, 0.8);
     height: 100vh;
     display: flex;
     justify-content: center;
