@@ -29,10 +29,56 @@ body, html {
 
 .profile-picture {
     position: absolute;
-    top: 5%; /* Adjust this value to position the image vertically */
+    top: 10%; /* Adjust this value to position the image vertically */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+}
+
+.profile-name-container {
+    position: absolute;
+    top: 35%; /* Position below the profile picture */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    text-align: center;
+    display: none; /* Hide by default on page load */
+}
+
+.profile-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #333; /* Cursor effect */
+    width: 0; /* Start with zero width */
+    transition: width 0.8s steps(5, end); /* Typing animation */
+}
+
+.profile-name.full-width {
+    width: max-content; /* Full width when animation complete */
+    border-right: none; /* Remove cursor when complete */
+}
+
+.toggle-name-btn {
+    position: absolute;
+    top: 18%; /* Position to the right of profile picture */
+    left: 65%; /* Adjust this to position horizontally */
+    z-index: 2;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .profile-picture img {
@@ -41,6 +87,20 @@ body, html {
     border-radius: 50%; /* This makes the image circular */
     object-fit: cover; /* Ensures the image fits well within the circular frame */
     object-position: top center; /* Adjust this value to change the portion of the image that is visible */
+}
+
+.profile-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-name-btn:hover {
+    background-color: #45a049;
 }
 
 .hero-content {
@@ -107,7 +167,7 @@ body, html {
     border: 2px solid yellow; 
     border-radius: 5px;
     position: absolute; /* Position the element absolutely within the hero */
-    bottom: 10%; /* Adjust this value to position the element vertically */
+    bottom: 20%; /* Adjust this value to position the element vertically */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1; /* Ensure it is above the background */
