@@ -29,15 +29,23 @@ body, html {
 
 .profile-picture {
     position: absolute;
-    top: 10%; /* Adjust this value to position the image vertically */
+    top: 2%; /* Adjust this value to position the image vertically */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
 }
 
+.profile-picture img {
+    width: 175px; /* Adjust the size of the image */
+    height: 175px;
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image fits well within the circular frame */
+    object-position: top center; /* Adjust this value to change the portion of the image that is visible */
+}
+
 .profile-name-container {
     position: absolute;
-    top: 35%; /* Position below the profile picture */
+    top: 30%; /* Position below the profile picture */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -79,14 +87,6 @@ body, html {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.profile-picture img {
-    width: 200px; /* Adjust the size of the image */
-    height: 200px;
-    border-radius: 50%; /* This makes the image circular */
-    object-fit: cover; /* Ensures the image fits well within the circular frame */
-    object-position: top center; /* Adjust this value to change the portion of the image that is visible */
 }
 
 .profile-name {
@@ -167,7 +167,7 @@ body, html {
     border: 2px solid yellow; 
     border-radius: 5px;
     position: absolute; /* Position the element absolutely within the hero */
-    bottom: 20%; /* Adjust this value to position the element vertically */
+    bottom: 10%; /* Adjust this value to position the element vertically */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1; /* Ensure it is above the background */
